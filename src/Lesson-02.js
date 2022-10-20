@@ -70,7 +70,7 @@ df_DeNA.head()`;
             <td>数値カラムに対して各種統計量を計算</td>
           </tr>
           <tr>
-            <td>df.describe(include = 'all')</td>
+            <td>df.describe(include='all')</td>
             <td>全てのカラムに対して各種統計量を計算</td>
           </tr>
           <tr>
@@ -86,7 +86,7 @@ df_DeNA.head()`;
             <td>カラム名を取得</td>
           </tr>
           <tr>
-            <td>df['column name'].unique()</td>
+            <td>df['列名'].unique()</td>
             <td>指定したカラムの重複を削除した、ユニークな要素を返す</td>
           </tr>
         </tbody>
@@ -227,9 +227,68 @@ df_DeNA.head()`;
           のオプションに<code>delimiter='\t'</code>を指定する。
         </li>
       </ul>
-      <h4>演習問題</h4>
 
       <h3 className="title is-4">データフレームの確認</h3>
+      <p>データフレームの特徴把握に有用なスキル</p>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>メソッド</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>df.head()</td>
+            <td>先頭の行を表示</td>
+          </tr>
+          <tr>
+            <td>df.tail()</td>
+            <td>末尾の行を表示</td>
+          </tr>
+          <tr>
+            <td>df.shape</td>
+            <td>行数・列数の取得</td>
+          </tr>
+          <tr>
+            <td>df.info()</td>
+            <td>データの要約</td>
+          </tr>
+          <tr>
+            <td>df.describe(include='number')</td>
+            <td>数値カラムに対して各種統計量を計算</td>
+          </tr>
+          <tr>
+            <td>df.describe(exclude='number')</td>
+            <td>数値カラム以外に対して各種統計量を計算</td>
+          </tr>
+          <tr>
+            <td>df.describe(include='all')</td>
+            <td>全てのカラムに対して各種統計量を計算</td>
+          </tr>
+          <tr>
+            <td>df.count()</td>
+            <td>各カラムの有効データ数を表示</td>
+          </tr>
+          <tr>
+            <td>df.dtypes</td>
+            <td>データ型を調べる</td>
+          </tr>
+          <tr>
+            <td>df.columns</td>
+            <td>カラム名を取得</td>
+          </tr>
+          <tr>
+            <td>df['列名'].unique()</td>
+            <td>指定したカラムの重複を削除した、ユニークな要素を返す</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        初めて扱うデータは、そのデータの全体像や特徴を丁寧に理解する必要があります。データの理解なくして最適な分析は行えません。データがどのように格納されているのか、格納されているデータはどのような分布（統計量）のデータなのか、分析に不要な余計なデータが紛れ込んでいないかなど、確認すべきポイントはたくさんあります。初見のデータであってもそのデータの特徴をしっかりと把握できるように、
+        「データフレームの確認」に関するスキルを身につけましょう。
+      </p>
+      <h4>例題</h4>
 
       <h3 className="title is-4">ファイル情報の取得</h3>
 
