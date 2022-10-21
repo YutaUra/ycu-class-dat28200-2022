@@ -42,5 +42,6 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "gh-pages": "^4.0.0"
-  }
+  },
+  "homepage": "https://khyarmt.github.io/ycu-class-dat28200-2022/"
 }
