@@ -19,10 +19,7 @@ import Lesson15 from "./Lesson-15";
 function MainContent() {
   return (
     <Routes>
-      <Route
-        path={`${process.env.PUBLIC_URL}/`}
-        element={<Introduction />}
-      ></Route>
+      <Route path="/" element={<Introduction />}></Route>
       <Route path="/Lesson-01" element={<Lesson01 />}></Route>
       <Route path="/Lesson-02" element={<Lesson02 />}></Route>
       <Route path="/Lesson-03" element={<Lesson03 />}></Route>
