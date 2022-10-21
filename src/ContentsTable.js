@@ -10,7 +10,7 @@ function SideBar() {
           <a href={`${process.env.PUBLIC_URL}/Lesson-01`}>Lesson 01</a>
         </li>
         <li>
-          <a href="/Lesson-02">Lesson 02</a>
+          <a href={`${process.env.PUBLIC_URL}/Lesson-02`}>Lesson 02</a>
         </li>
         <li>
           <a href="/Lesson-03">Lesson 03</a>

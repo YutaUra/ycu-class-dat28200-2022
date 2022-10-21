@@ -27,7 +27,10 @@ function MainContent() {
         path={`${process.env.PUBLIC_URL}/Lesson-01`}
         element={<Lesson01 />}
       ></Route>
-      <Route path="/Lesson-02" element={<Lesson02 />}></Route>
+      <Route
+        path={`${process.env.PUBLIC_URL}/Lesson-02`}
+        element={<Lesson02 />}
+      ></Route>
       <Route path="/Lesson-03" element={<Lesson03 />}></Route>
       <Route path="/Lesson-04" element={<Lesson04 />}></Route>
       <Route path="/Lesson-05" element={<Lesson05 />}></Route>
