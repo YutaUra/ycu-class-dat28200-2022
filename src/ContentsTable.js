@@ -13,10 +13,10 @@ function SideBar() {
           <a href={`${process.env.PUBLIC_URL}/Lesson-02`}>Lesson 02</a>
         </li>
         <li>
-          <a href="/Lesson-03">Lesson 03</a>
+          <a href={`${process.env.PUBLIC_URL}/Lesson-03`}>Lesson 03</a>
         </li>
         <li>
-          <a href="/Lesson-04">Lesson 04</a>
+          <a href={`${process.env.PUBLIC_URL}/Lesson-04`}>Lesson 04</a>
         </li>
         <li>
           <a href="/Lesson-05">Lesson 05</a>
