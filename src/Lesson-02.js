@@ -9,16 +9,26 @@ function Lesson02() {
 import pandas as pd
 import numpy  as np
 import os
-from glob import glob
-
-# ディレクトリの設定
-root_in  = "./01_input/"  # 読み込むデータがあるフォルダ
-root_out = "./02_output/" # 出力先のフォルダ`;
+from glob import glob`;
 
   const source_code_2_1_2 = `df_DeNA = pd.read_csv('./01_input/プロ野球フリーク_横浜DeNA_選手一覧.csv', encoding = 'cp932')
 df_DeNA.head()`;
 
   const source_code_2_1_3 = `os.getcwd()`;
+
+  const source_code_2_2_1 = `df_CVS = pd.read_csv('./01_input/コンビニエンスストア_都道府県別店舗数_2022年3月時点.csv', encoding='cp932', dtype={'都道府県コード' : 'object'})
+df_CVS.head(10)`;
+
+  const source_code_2_2_2 = `df_CVS.tail(10)`;
+
+  const source_code_2_3_1 = `all_csv_files = glob('./01_input/*.csv')
+all_csv_files`;
+
+  const source_code_2_4_1 = `df_DeNA.to_csv('./02_output/出力テスト_横浜DeNA_選手一覧.csv',
+  index=False, # インデックスは出力しない
+  header=True, # 列名を出力する
+  sep=',',  #csvファイルなので区切り文字はカンマ
+  encoding='cp932') # cp932で保存`;
   /* eslint-enable */
 
   return (
@@ -124,7 +134,7 @@ df_DeNA.head()`;
       >
         {source_code_2_1_2}
       </SyntaxHighlighter>
-      <p className="has-text-danger">出力結果</p>
+      <img src={`${process.env.PUBLIC_URL}/output_2_1_1.png`} alt="" />
       <p>
         カレントディレクトリとは、「Python が今いる場所（フォルダ /
         ディレクトリ）」のことを指します。Windosw
@@ -147,7 +157,6 @@ df_DeNA.head()`;
       >
         {source_code_2_1_3}
       </SyntaxHighlighter>
-      <p className="has-text-danger">出力結果</p>
       <h4>解説</h4>
       <p>
         csvファイルの読み込みには、<code>pd.read_csv()</code>を使います。
@@ -289,10 +298,90 @@ df_DeNA.head()`;
         「データフレームの確認」に関するスキルを身につけましょう。
       </p>
       <h4>例題</h4>
+      <p>
+        <code>01_input</code>フォルダ内に配置してある
+        <code>コンビニエンスストア_都道府県別店舗数_2022年3月時点.csv</code>
+        を読み込み、<code>df_CVS</code>
+        というデータフレーム名で格納しましょう。また、読み込んだ結果である
+        <code>df_CVS</code>の先頭10行と末尾10行のデータを表示させてみましょう。
+      </p>
+      <SyntaxHighlighter
+        language="python"
+        style={monokai}
+        showLineNumbers={true}
+      >
+        {source_code_2_2_1}
+      </SyntaxHighlighter>
+      <img src={`${process.env.PUBLIC_URL}/output_2_2_1.png`} alt="" />
+      <SyntaxHighlighter
+        language="python"
+        style={monokai}
+        showLineNumber={true}
+      >
+        {source_code_2_2_2}
+      </SyntaxHighlighter>
+      <img src={`${process.env.PUBLIC_URL}/output_2_2_2.png`} alt="" />
 
       <h3 className="title is-4">ファイル情報の取得</h3>
+      <h4>例題</h4>
+      <p>
+        <code>01_input</code>
+        フォルダ内に配置してあるすべてのcsvファイルのパスを取得してみましょう。
+      </p>
+      <SyntaxHighlighter
+        language="python"
+        style={monokai}
+        showLineNumbers={true}
+      >
+        {source_code_2_3_1}
+      </SyntaxHighlighter>
+      <img src={`${process.env.PUBLIC_URL}/output_2_3_1.png`} alt="" />
+      <h4>解説</h4>
+      <p>
+        複数のファイルを読み込んでデータの結合や集約を行うことはよくあります。ここでは、複数のcsvファイルを読み込む方法について見てみます。ある条件に当てはまるファイルを検索するには、
+        <code>glob()</code>関数を使います。
+      </p>
+      <ul>
+        <li>
+          <code>glob()</code>
+          関数はPythonが標準で提供する関数の1つで、pandasとは直接関係ありません。
+        </li>
+      </ul>
+      <p>
+        <code>glob()</code>関数の使用
+      </p>
+      <ul>
+        <li>
+          ワイルドカードパターン（なんでもありの文字列指定：*）を展開し、そのパターンにマッチするパス名のリストを得ることを指します。
+        </li>
+        <li>
+          <code>glob()</code>
+          の説明として、「ワイルドカードを用いたパターンの文字列」とされているケースもあります。
+        </li>
+      </ul>
 
       <h3 className="title is-4">ファイルの出力</h3>
+      <p>
+        「1.ファイルの読み込み」の例題で作成したデータフレーム
+        <code>df_DeNA</code>を、以下の条件に従い出力してみましょう。
+      </p>
+      <ul>
+        <li>
+          出力先：<code>02_output</code>
+        </li>
+        <li>
+          ファイル名：<code>出力テスト_横浜DeNA_選手一覧.csv</code>
+        </li>
+        <li>ファイル形式：csv形式</li>
+        <li>オプション：特段指定なし</li>
+      </ul>
+      <SyntaxHighlighter
+        language="python"
+        style={monokai}
+        showLineNumbers={true}
+      >
+        {source_code_2_4_1}
+      </SyntaxHighlighter>
     </div>
   );
 }

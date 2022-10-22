@@ -6,8 +6,7 @@ function App() {
     <div>
       <header className="hero is-success">
         <div className="hero-body">
-          <p className="title">Title</p>
-          <p className="subtitle">Subtitle</p>
+          <p className="title">特講（寄付講座：帝国データバンクDE養成講座）</p>
         </div>
       </header>
       <div className="columns">
