@@ -15,3 +15,45 @@ code {
 .main-content {
   width: 800px;
 }
+
+/* セルのヘッダー（Input[1], Output[1] みたいなやつ */
+.cell-header,
+/* セルを選択した時に左側に出る選択線 */
+.block-light,
+.block-light-selected {
+  display: none;
+}
+
+/* フォントサイズ調整 */
+.block .cell-row .cell-content.source-markdown {
+  font-size: 16px !important;
+}
+.cell-content.source-code,
+.cell-content.source-code pre code span {
+  font-size: 14px;
+}
+
+/* padding 調整 */
+.jupyter-viewer .block,
+.cell-content {
+  padding-left: 0 !important;
+}
+
+/* 出力される表を横スクロールで表示できるように調整 */
+.cell-content.output-display > div {
+  max-width: 100%;
+}
+.colab-df-container > div {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* 出力される表のデザイン調整 */
+.colab-df-container table td,
+.colab-df-container table th {
+  background: #f6f6f6;
+}
+.colab-df-container tr:nth-child(odd) td,
+.colab-df-container tr:nth-child(odd) th {
+  background: #fff;
+}

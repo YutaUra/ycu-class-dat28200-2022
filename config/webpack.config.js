@@ -560,6 +560,12 @@ module.exports = function (webpackEnv) {
             // Make sure to add the new loader(s) before the "file" loader.
           ],
         },
+        {
+          // load .ipynb files as json
+          test: /\.ipynb$/,
+          loader: 'json-loader',
+          type: "javascript/auto"
+        },
       ].filter(Boolean),
     },
     plugins: [
